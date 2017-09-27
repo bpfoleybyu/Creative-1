@@ -1,0 +1,154 @@
+<html>
+
+<head>
+	<link rel="stylesheet" type="text/css" href="Style.css">
+<script>
+function AddDigs()
+{
+	document.getElementById('Digs').value++;
+}
+function SubtractDigs()
+{
+	document.getElementById('Digs').value--;
+}
+function clearDigs(){
+	document.getElementById('Digs').value = 0;
+}
+function addName(){
+	var playerName = document.getElementById('name').text;
+	console.print(playerName);
+	document.getElementById('playerName').innerHTML = playerName;
+}
+function clrName(){
+	document.getElementById('name').value = " ";
+	document.getElementById('playerName').value = " ";
+}
+
+function AddKills()
+{
+	document.getElementById('Kills').value++;
+	document.getElementById('Ta').value++
+	hitPct();
+}
+function SubtractKills()
+{
+	document.getElementById('Kills').value--;
+	document.getElementById('Ta').value--;
+	hitPct();
+}
+function clearKills(){
+	document.getElementById('Kills').value = 0;
+}
+
+function AddErr()
+{
+	document.getElementById('Errors').value++;
+	document.getElementById('Ta').value++;
+	hitPct();
+}
+function SubErr()
+{
+	document.getElementById('Errors').value--;
+	document.getElementById('Ta').value--;
+	hitPct();
+}
+function clrErr(){
+	document.getElementById('Errors').value = 0;
+}
+
+function AddTa()
+{
+	document.getElementById('Ta').value++;
+	hitPct();
+}
+function SubTa()
+{
+	document.getElementById('Ta').value--;
+	hitPct();
+}
+function clrTa(){
+	document.getElementById('Ta').value = 0;
+}
+
+function AddBlocks()
+{
+	document.getElementById('Blocks').value++;
+}
+function SubtractBlocks()
+{
+	document.getElementById('Blocks').value--;
+}
+function clearBlocks(){
+	document.getElementById('Blocks').value = 0;
+}
+function AddAces()
+{
+	document.getElementById('Aces').value++;
+}
+function SubtractAces()
+{
+	document.getElementById('Aces').value--;
+}
+function clearAces(){
+	document.getElementById('Aces').value = 0;
+}
+//calculates the hitting percentage.
+function hitPct(){
+	var kills = document.getElementById('Kills').value;
+	var error = document.getElementById('Errors').value;
+	var ta = document.getElementById('Ta').value;
+	document.getElementById('Pct').value = (kills - error)/ta;
+}
+</script>
+</head>
+
+<body onload="hitPct();">
+	<div id="Header">
+		<h1>Volleyball Stat Tracker</h1>
+		<img id="img1" src="Volleyball2.jpg" alt="Volleyball">
+	</div>
+<div id="statsTable" style="overflow-x:auto;">
+	<table>
+	<tr>
+	<th></th>
+	  <th>Name</th>
+	  <th>Kills</th>
+		<th>Errors</th>
+		<th>Total Attempts</th>
+		<th>Hit Pct.</th>
+	  <th>Blocks</th>
+	  <th>Aces</th>
+		<th>Digs</th>
+
+	</tr>
+
+	<tr>
+		<td>Player</td>
+		<td><input type="text" id="Name" value=" "/></td>
+		<td><input type="text" id="Kills" value="0"/></td>
+		<td><input type="text" id="Errors" value="0"/></td>
+		<td><input type="number" id="Ta" Value="0"/></td>
+		<td><input type="text" id="Pct" value="0"/></td>
+		<td><input type="text" id="Blocks" value="0"/></td>
+		<td><input type="text" id="Aces" value="0"/></td>
+		<td><input oninput="changeDigs" type="text" id="Digs" value="0"/></td>
+	</tr>
+	<tr>
+
+	<td>Modify</td>
+	  <td><button onclick="clrName()">Clear Name</button></td>
+	  <td><button onclick="AddKills()"> +1 </button>   <button onclick="SubtractKills()"> -1 </button>   <button onclick="clearKills()"> Clear </button></td>
+		<td><button onclick="AddErr()"> +1 </button>   <button onclick="SubErr()"> -1 </button>   <button onclick="clrErr()"> Clear </button></td>
+		<td><button onclick="AddTa()"> +1 </button>   <button onclick="SubTa()"> -1 </button>   <button onclick="clrTa()"> Clear </button></td>
+		<td></td>
+	  <td><button onclick="AddBlocks()"> +1 </button>   <button onclick="SubtractBlocks()"> -1 </button>   <button onclick="clearBlocks()"> Clear </button></td>
+	  <td><button onclick="AddAces()"> +1 </button>   <button onclick="SubtractAces()"> -1 </button>   <button onclick="clearAces()"> Clear </button></td>
+		<td><button onclick="AddDigs()"> +1 </button>   <button onclick="SubtractDigs()"> -1 </button>   <button onclick="clearDigs()"> Clear </button></td>
+	</tr>
+
+	</table>
+</div>
+
+
+</body>
+</html>

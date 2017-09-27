@@ -1,0 +1,27 @@
+h1{
+  color:white;
+padding-left: 200px;
+padding-right: 200px;
+  background-color: #00009a;
+  align-content: center;
+}
+#Header{
+  display: block;
+  margin: auto;
+  width: 40%;
+
+}
+button, td, h2{
+ text-align: center;
+}
+
+table{
+  margin:auto;
+  width: 50%;
+ border: 3px solid blue;
+ border align-self: auto;
+}
+
+th, td{
+ border: 1px solid black;
+}
